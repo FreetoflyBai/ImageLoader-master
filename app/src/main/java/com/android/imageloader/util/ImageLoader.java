@@ -156,8 +156,8 @@ public class ImageLoader {
                 Bitmap bitmap= loadBitmap(uri,reqWidth,reqHeight);
                 if(bitmap!=null){
                     LoaderResult result=new LoaderResult(imageView,uri,bitmap);
-                    mMainHandler.obtainMessage(MESSAGE_POST_RESULT, result);
-//                    sendToTarger();
+                    Message message=mMainHandler.obtainMessage(MESSAGE_POST_RESULT, result);
+                    message.sendToTarget();
                 }
             }
         };

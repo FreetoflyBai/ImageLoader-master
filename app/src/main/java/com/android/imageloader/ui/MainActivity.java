@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,12 @@ import android.widget.ImageView;
 import com.android.imageloader.R;
 import com.android.imageloader.util.ImageLoader;
 import com.android.imageloader.util.NetworkUtils;
+import com.bumptech.glide.Glide;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static android.R.attr.tag;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -111,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             if(convertView==null){
                 convertView=mInflater.inflate(R.layout.adapter_item,parent,false);
                 holder=new ViewHolder();
-                holder.imageView= (ImageView) convertView.findViewById(R.id.image);
+                holder.imageView= (ImageView) convertView.findViewById(R.id.image_item);
                 convertView.setTag(holder);
             }else{
                 holder= (ViewHolder) convertView.getTag();
@@ -123,8 +127,10 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageResource(R.mipmap.ic_launcher);
             }
             if(mIsGridViewIdle && mCanGetBitmapFromNetWork){
+                imageView.setTag(uri);
                 mImageLoader.bindBitmap(uri,imageView,100,100);
             }
+
             return convertView;
         }
 
