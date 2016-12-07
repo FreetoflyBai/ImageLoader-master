@@ -11,8 +11,8 @@ import android.widget.ImageView;
  * QQ         : 904869397@qq.com
  */
 
-public class SquareImageView extends ImageView{
-    public SquareImageView(Context context, AttributeSet attrs) {
+public class FixImageView extends ImageView{
+    public FixImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
