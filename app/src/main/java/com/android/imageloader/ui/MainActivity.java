@@ -14,6 +14,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.android.imageloader.R;
+import com.android.imageloader.util.FixImageView;
 import com.android.imageloader.util.ImageLoader;
 import com.android.imageloader.util.NetworkUtils;
 
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             if(convertView==null){
                 convertView=mInflater.inflate(R.layout.adapter_item,parent,false);
                 holder=new ViewHolder();
-                holder.imageView= (ImageView) convertView.findViewById(R.id.image_item);
+                holder.imageView= (FixImageView) convertView.findViewById(R.id.image_item);
                 convertView.setTag(holder);
             }else{
                 holder= (ViewHolder) convertView.getTag();
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         class ViewHolder{
-            ImageView imageView;
+            FixImageView imageView;
         }
     }
 }
