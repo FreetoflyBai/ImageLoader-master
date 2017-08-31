@@ -8,5 +8,5 @@ ImageLoader-master is an image loading framework, mainly used LruCache 、 DiskL
 
 ## Instructions:
 
-### ImageLoader mImageLoader=ImageLoader.build(this);
-### mImageLoader.bindBitmap(uri,imageView,width,height);
+ImageLoader mImageLoader=ImageLoader.build(this);
+mImageLoader.bindBitmap(uri,imageView,width,height);
